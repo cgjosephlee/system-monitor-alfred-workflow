@@ -264,7 +264,7 @@
 				<key>runningsubtext</key>
 				<string>list processes...</string>
 				<key>script</key>
-				<string>LANG=en_US.UTF-8 /usr/bin/ruby ./alfred2_top_workflow.rb {query}</string>
+				<string>LANG=en_US.UTF-8 /usr/local/opt/ruby@2.3/bin/ruby ./alfred2_top_workflow.rb {query}</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -378,7 +378,7 @@
 				<key>runningsubtext</key>
 				<string>Determining top processes...</string>
 				<key>script</key>
-				<string>LANG=en_US.UTF-8 /usr/bin/ruby ./alfred2_top_workflow.rb {query}</string>
+				<string>LANG=en_US.UTF-8 /usr/local/opt/ruby@2.3/bin/ruby ./alfred2_top_workflow.rb {query}</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -487,7 +487,7 @@
 				<key>runningsubtext</key>
 				<string>waiting...</string>
 				<key>script</key>
-				<string>LANG=en_US.UTF-8 /usr/bin/ruby ./lsof.rb {query}</string>
+				<string>LANG=en_US.UTF-8 /usr/local/opt/ruby@2.3/bin/ruby ./lsof.rb {query}</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -565,7 +565,7 @@
 				<key>runningsubtext</key>
 				<string>working on it ヽ( ´¬`)ノ</string>
 				<key>script</key>
-				<string>LANG=en_US.UTF-8 /usr/bin/ruby ./glance.rb {query} </string>
+				<string>LANG=en_US.UTF-8 /usr/local/opt/ruby@2.3/bin/ruby ./glance.rb {query} </string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
