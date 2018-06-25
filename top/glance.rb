@@ -56,23 +56,23 @@ class Glance
 
     # temp = IStats::Cpu.delegate("all")
 
-#     > IStats.get_info[:cpu_temperature]
-# => {:battery_health_stats=>{:battery_health=>"Good", :max_design_cycle_count=>1000, :cycle_count=>"156", :cycle_count_percentage=>15.6, :thresholds=>[450.0, 650.0, 850.0, 950.0], :battery_temp=>31.796875}, :battery_charge_stats=>{:cur_charge=>"3630", :cur_charge_percentage=>64, :original_max_capacity=>6559.0, :current_max_capacity=>5932.0}, :cpu_temperature=>43.5, :cpu_thresholds=>[50, 68, 80, 90], :fan_numbers_and_speeds=>[[1, 0]]}
+    # > IStats.get_info[:cpu_temperature]
+    # => {:battery_health_stats=>{:battery_health=>"Good", :max_design_cycle_count=>1000, :cycle_count=>"156", :cycle_count_percentage=>15.6, :thresholds=>[450.0, 650.0, 850.0, 950.0], :battery_temp=>31.796875}, :battery_charge_stats=>{:cur_charge=>"3630", :cur_charge_percentage=>64, :original_max_capacity=>6559.0, :current_max_capacity=>5932.0}, :cpu_temperature=>43.5, :cpu_thresholds=>[50, 68, 80, 90], :fan_numbers_and_speeds=>[[1, 0]]}
 
     cpu_temperature = IStats.get_info[:cpu_temperature]
     icon = {:type => "default", :name => "icon/temperature/GPU.png"}
     @feedback.add_item(
       :subtitle => "CPU: #{cpu_temperature}° C" ,
-      :title    => "CPU Temperature"                                     ,
-      :uid      => "CPU Temperature"                                     ,
+      :title    => "CPU Temperature"            ,
+      :uid      => "CPU Temperature"            ,
       :icon     => icon)
 
     # gpu_temperature = 200
     # icon = {:type => "default", :name => "icon/temperature/GPU.png"}
     # @feedback.add_item(
     #   :subtitle => "GPU: #{gpu_temperature}° C" ,
-    #   :title    => "GPU Temperature"                                     ,
-    #   :uid      => "GPU Temperature"                                     ,
+    #   :title    => "GPU Temperature"            ,
+    #   :uid      => "GPU Temperature"            ,
     #   :icon     => icon)
 
     # [number, speed]
@@ -131,7 +131,7 @@ class Glance
   def collect_bluetooth
     return if @actor
 
-    bluetooth_device_keys = ["BNBMouseDevice", "AppleBluetoothHIDKeyboard", "BNBTrackpadDevice"]
+    bluetooth_device_keys = ["BNBMouseDevice", "AppleHSBluetoothDevice", "AppleBluetoothHIDKeyboard", "IOAppleBluetoothHIDDriver", "BNBTrackpadDevice"]
 
     bluetooth_device_keys.each do |key|
       devices = Plist.parse_xml %x{ioreg -l -n #{key} -r -a}
@@ -308,12 +308,12 @@ class Glance
           .gsub("C:", "Case :")
 
         airpods_battery_item = {
-          :title        => "Airpods"            ,
+          :title        => "Airpods"         ,
           :subtitle     => "#{battery_info}" ,
-          :uid          => "Airpods"                      ,
-          :valid        => 'no'                                      ,
-          :autocomplete => 'Airpods ⟩ '                              ,
-          :icon         => icon                                      ,
+          :uid          => "Airpods"         ,
+          :valid        => 'no'              ,
+          :autocomplete => 'Airpods ⟩ '      ,
+          :icon         => icon              ,
         }
         @feedback.add_item(airpods_battery_item)
   end
