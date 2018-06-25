@@ -131,7 +131,7 @@ class Glance
   def collect_bluetooth
     return if @actor
 
-    bluetooth_device_keys = ["BNBMouseDevice", "IOAppleBluetoothHIDDriver", "BNBTrackpadDevice"]
+    bluetooth_device_keys = ["BNBMouseDevice", "AppleHSBluetoothDevice", "AppleBluetoothHIDKeyboard", "IOAppleBluetoothHIDDriver", "BNBTrackpadDevice"]
 
     bluetooth_device_keys.each do |key|
       devices = Plist.parse_xml %x{ioreg -l -n #{key} -r -a}
