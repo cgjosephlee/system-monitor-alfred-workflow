@@ -54,7 +54,7 @@ class Glance
   def collect_temperature
     return if @actor
 
-    # temp = I)
+    # temp = IStats::Cpu.delegate("all")
 
     # > IStats.get_info[:cpu_temperature]
     # => {:battery_health_stats=>{:battery_health=>"Good", :max_design_cycle_count=>1000, :cycle_count=>"156", :cycle_count_percentage=>15.6, :thresholds=>[450.0, 650.0, 850.0, 950.0], :battery_temp=>31.796875}, :battery_charge_stats=>{:cur_charge=>"3630", :cur_charge_percentage=>64, :original_max_capacity=>6559.0, :current_max_capacity=>5932.0}, :cpu_temperature=>43.5, :cpu_thresholds=>[50, 68, 80, 90], :fan_numbers_and_speeds=>[[1, 0]]}
